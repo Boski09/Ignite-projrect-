@@ -43,9 +43,17 @@ variable "enable_api_xray"{
 }
 variable "authorizer_lambda_arn" {
   type = string
-  # default = ""
-  description = "Authorizer lambda function arn (Leave empty if not applicable)"
+  description = "Authorizer lambda function arn"
 }
+
+#################################
+#        SSM param vars         #
+#################################
+variable "ssm_param_value"{
+    type = string
+    description = "SSM param value. Leave empty if not applicable"
+}
+
 variable "tags"{
   type = map(string)
   default = {
