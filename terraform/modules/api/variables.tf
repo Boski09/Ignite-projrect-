@@ -10,10 +10,6 @@ variable "api_endpoint_type"{
     type = string
     description = "API endpoint type. REGIONAL, EDGE or PRIVATE"
 }
-variable "authorizer_lambda_invoke_arn"{
-    type = string
-    description = "Authorizer lambda invoke arn"
-}
 variable "lambda_invoke_arn"{
     type = string
     description = "Lambda invoke arn for api"

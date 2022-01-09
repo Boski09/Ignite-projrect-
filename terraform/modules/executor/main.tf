@@ -72,7 +72,7 @@ module "api" {
     api_name                        = "CPAPI"
     #authorizer_lambda_invoke_arn    = module.api_lambda_function_authorizer.lambda_function_invoke_arn
     # authorizer_lambda_invoke_arn    = var.authorizer_lambda_arn != null ? "arn:aws:apigateway:${data.aws_region.aws-region.name}:lambda:path/2015-03-31/functions/${var.authorizer_lambda_arn}/invocations" : module.api_lambda_function_authorizer.lambda_function_invoke_arn
-    authorizer_lambda_invoke_arn    = "arn:aws:apigateway:${data.aws_region.aws-region.name}:lambda:path/2015-03-31/functions/${var.authorizer_lambda_arn}/invocations"
+    /* authorizer_lambda_invoke_arn    = "arn:aws:apigateway:${data.aws_region.aws-region.name}:lambda:path/2015-03-31/functions/${var.authorizer_lambda_arn}/invocations" */
     lambda_invoke_arn               = module.lambda_function_01.lambda_function_invoke_arn
     lambda_name                     = module.lambda_function_01.lambda_function_name
     lambda_name_02                  = module.lambda_function_02.lambda_function_name

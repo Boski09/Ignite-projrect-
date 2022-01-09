@@ -41,10 +41,6 @@ variable "enable_api_xray"{
   default = true
   description = "Enable xray for api gateway"
 }
-variable "authorizer_lambda_arn" {
-  type = string
-  description = "Authorizer lambda function arn"
-}
 
 #################################
 #        SSM param vars         #
