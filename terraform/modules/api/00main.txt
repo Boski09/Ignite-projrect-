@@ -1,0 +1,9 @@
+resource "aws_api_gateway_rest_api" "this" {
+  name        = "swagger"
+  description = "swagger"
+  /* endpoint_configuration {
+    types            = var.endpoint_type
+    vpc_endpoint_ids = [var.vpc_endpoint_id]
+  } */
+  body = file("${path.module}/swagger.json")  #data.template_file.this.rendered
+}

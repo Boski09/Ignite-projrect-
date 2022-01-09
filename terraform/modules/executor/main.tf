@@ -68,6 +68,7 @@ module "lambda_function_03" {
 
 module "api" {
     source                          = "../api"
+    env                             = "dev"
     api_name                        = "CPAPI"
     #authorizer_lambda_invoke_arn    = module.api_lambda_function_authorizer.lambda_function_invoke_arn
     # authorizer_lambda_invoke_arn    = var.authorizer_lambda_arn != null ? "arn:aws:apigateway:${data.aws_region.aws-region.name}:lambda:path/2015-03-31/functions/${var.authorizer_lambda_arn}/invocations" : module.api_lambda_function_authorizer.lambda_function_invoke_arn
@@ -78,6 +79,11 @@ module "api" {
     lambda_invoke_arn_02            = module.lambda_function_02.lambda_function_invoke_arn
     lambda_name_03                  = module.lambda_function_03.lambda_function_name
     lambda_invoke_arn_03            = module.lambda_function_03.lambda_function_invoke_arn
+    api_endpoint_type               = "REGIONAL"
+    stage_01_name                   = "devtest"
+    api_key_value                   = ""
+    api_key_name                    = ""
+    key_type                        = ""
    
     stage_name                      = "dev"
     tags                            = var.tags
